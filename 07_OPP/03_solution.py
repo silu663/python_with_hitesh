@@ -6,6 +6,10 @@ class Car:
         self.brand = brand
         self.model = model
     
+    
+    def get_brand(self):
+        return self.brand + "!"
+    
     def full_name(self): 
         return f"{self.brand} {self.model}"
 
@@ -24,11 +28,14 @@ class NewElectricCar(Car):
         super().__init__(brand,model,battery_life)
 
 
-print('using the ')
+# print('using the the Car class')
 electric_car = ElectricCar("Tesla","model s","85kWh")
-print('Brand :',electric_car.brand)
-print('Model :',electric_car.model)
-print('Battery Life :',electric_car.battery_life)
-print('Full Name :',electric_car.full_name())
+# print('Brand :',electric_car.brand)
+# print('Model :',electric_car.model)
+# print('Battery Life :',electric_car.battery_life)
+# print('Full Name :',electric_car.full_name())
+
+print(electric_car.brand)
+print(electric_car.get_brand())
 
 
