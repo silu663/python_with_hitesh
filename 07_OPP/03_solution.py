@@ -3,15 +3,18 @@
 
 class Car:
     def __init__(self,brand,model):
-        self.brand = brand
+        self.__brand = brand # "__" privatise the veriable (encapsulation)
         self.model = model
     
     
     def get_brand(self):
-        return self.brand + "!"
+        return self.__brand + "!"
     
     def full_name(self): 
-        return f"{self.brand} {self.model}"
+        return f"{self.__brand} {self.model}"
+    
+    def fuel_type(self):
+        return "Ptrol or disel"
 
     
 
@@ -21,6 +24,10 @@ class ElectricCar(Car):
         self.battery_life = battery_life
         super().__init__(brand, model)
 
+    
+    def fuel_type(self):
+        return "Electric charge"
+
 
 class NewElectricCar(Car): 
     def __init__(self,brand,model,battery_life,milage):
@@ -29,13 +36,18 @@ class NewElectricCar(Car):
 
 
 # print('using the the Car class')
-electric_car = ElectricCar("Tesla","model s","85kWh")
 # print('Brand :',electric_car.brand)
 # print('Model :',electric_car.model)
 # print('Battery Life :',electric_car.battery_life)
 # print('Full Name :',electric_car.full_name())
+# print(electric_car.__brand)
 
-print(electric_car.brand)
+electric_car = ElectricCar("Tesla","model s","85kWh")
 print(electric_car.get_brand())
+safari =  Car("Tata","safari")
+print(electric_car.fuel_type())
+print(safari.fuel_type())
+
+
 
 
